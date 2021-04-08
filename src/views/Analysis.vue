@@ -1,60 +1,62 @@
 
 <template>
-  <div class="small">
-    <Chart :chart-data='datacollection'></Chart>
-    <button @click="fillData()">Randomize</button>
+  <div id="analysis">
+    <div>
+      <Sample1 class="item"/>
+      <Sample1 class="item"/>
+      <Sample1 class="item"/>
+    </div>
+    <div>
+      <Sample2 class="item"/>
+      <Sample2 class="item"/>
+      <Sample2 class="item"/>
+    </div>
+    <div>
+      <Sample3 class="item"/>
+      <Sample3 class="item"/>
+      <Sample3 class="item"/>
+    </div>
+    <div>
+      <Sample4 class="item"/>
+      <Sample4 class="item"/>
+      <Sample4 class="item"/>
+    </div>
   </div>
 </template>
 
 <script>
-  import Chart from '@/components/Chart.js'
+  import Sample1 from '@/components/Analysis/Sample1'
+  import Sample2 from '@/components/Analysis/Sample2'
+  import Sample3 from '@/components/Analysis/Sample3'
+  import Sample4 from '@/components/Analysis/Sample4'
 
   export default {
+    name: 'analysis',
     components: {
-      Chart
+      Sample1,
+      Sample2,
+      Sample3,
+      Sample4
     },
     data() {
       return {
-        datacollection: null,
-        loaded: false
+
       }
     },
+    mounted() {
+      
+    },
     methods: {
-      fillData () {
-        this.datacollection = {
-          labels: [0,1,2,3,4,5],
-          datasets: [
-            {
-              label: 'Data Two',
-              backgroundColor: '#dddddd',
-              borderColor: 'lightblue',
-              pointBackgroundColor: 'blue',
-              borderWidht: 1,
-              pointBorderColor: 'blue',
-              data: [0,0,1,2,4]
-            },
-            {
-              label: 'Data One',
-              backgroundColor: '#f87979',
-              borderColor: 'lightblue',
-              pointBackgroundColor: 'blue',
-              borderWidht: 1,
-              pointBorderColor: 'blue',
-              data: [0,1,2,3,4,5]
-            },
-          ]
-        }
-      },
-      getRandomInt () {
-        return Math.floor(Math.random() * (50 - 5 + 1)) + 5
-      }
+      
     }
   }
 </script>
 
-<style>
-  .small {
-    max-width: 600px;
-    margin:  150px auto;
+<style lang="scss" scoped>
+  #analysis {
+    text-align: center;
+    .item {
+      padding: 20px;
+    }
   }
 </style>

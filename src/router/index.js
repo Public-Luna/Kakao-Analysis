@@ -21,5 +21,10 @@ export default new Router({
         // },
       ]
     },
+    {
+      path: "/project",
+      component: () => import("@/views/Project"),
+      children: []
+    },
   ]
 });
