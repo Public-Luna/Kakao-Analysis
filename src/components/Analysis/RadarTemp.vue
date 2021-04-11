@@ -1,6 +1,6 @@
 <template>
-  <div id="sample2" :style="style">
-    <BarChart :chartData="datacollection" :width="width" :height="height" margin="0"/>
+  <div id="sample4" :style="style">
+    <RadarChart :chartData="datacollection" :width="width" :height="height" margin="0"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -8,18 +8,18 @@
     margin: 0 auto;
     padding: 0;
   }
-  #sample2 {
+  #sample4 {
     margin: 0;
     display: inline-block;
   }
 </style>
 <script>
-import BarChart from '@/components/Chart/BarChart'
+import RadarChart from '@/components/Chart/RadarChart'
 
 export default {
-  name: 'Sample2',
+  name: 'Sample4',
   components: {
-    BarChart
+    RadarChart
   },
   props: {
     width: {
@@ -51,16 +51,28 @@ export default {
   methods: {
     fillData() {
       this.datacollection = {
-        labels: ['2020.01','2020.02','2020.03','2020.04'],
+        labels: ['a','b','c','d','e'],
         datasets: [
           {
-            label: '비속어 사용',
-            backgroundColor: '#f8ede3',
-            borderColor: '#798777',
-            pointBackgroundColor: '#798777',
-            borderWidht: 1,
-            pointBorderColor: '#bdd2b6',
-            data: this.randomList(4)
+            label: '홍길동',
+            backgroundColor: '#be000044',
+            borderColor: '#be0000aa',
+            borderWidth: 1,
+            data: this.randomList(5)
+          },
+          {
+            label: '엄준식',
+            backgroundColor: '#e4890044',
+            borderColor: '#e48900aa',
+            borderWidth: 1,
+            data: this.randomList(5)
+          },
+          {
+            label: '고길동',
+            backgroundColor: '#9ede7344',
+            borderColor: '#9ede73aa',
+            borderWidth: 1,
+            data: this.randomList(5)
           },
         ]
       }

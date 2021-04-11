@@ -2,41 +2,49 @@
 <template>
   <div id="analysis">
     <div>
-      <Sample1 class="item"/>
-      <Sample1 class="item"/>
-      <Sample1 class="item"/>
+      <LineTemp class="item"/>
+      <LineTemp class="item"/>
+      <BarTemp class="item"/>
+      <BarTemp class="item"/>
     </div>
     <div>
-      <Sample2 class="item"/>
-      <Sample2 class="item"/>
-      <Sample2 class="item"/>
+      <PieTemp class="item"/>
+      <PieTemp class="item"/>
+      <RaderTemp class="item"/>
+      <RaderTemp class="item"/>
     </div>
     <div>
-      <Sample3 class="item"/>
-      <Sample3 class="item"/>
-      <Sample3 class="item"/>
+      <ScatterTemp class="item"/>
+      <ScatterTemp class="item"/>
+      <DoughnutTemp class="item" />
+      <DoughnutTemp class="item" />
     </div>
     <div>
-      <Sample4 class="item"/>
-      <Sample4 class="item"/>
-      <Sample4 class="item"/>
+      <BubbleTemp class="item" />
+      <BubbleTemp class="item" />
     </div>
   </div>
 </template>
 
 <script>
-  import Sample1 from '@/components/Analysis/Sample1'
-  import Sample2 from '@/components/Analysis/Sample2'
-  import Sample3 from '@/components/Analysis/Sample3'
-  import Sample4 from '@/components/Analysis/Sample4'
+  import LineTemp from '@/components/Analysis/LineTemp'
+  import BarTemp from '@/components/Analysis/BarTemp'
+  import PieTemp from '@/components/Analysis/PieTemp'
+  import RaderTemp from '@/components/Analysis/RadarTemp'
+  import ScatterTemp from '@/components/Analysis/ScatterTemp'
+  import DoughnutTemp from '@/components/Analysis/DoughnutTemp'
+  import BubbleTemp from '@/components/Analysis/BubbleTemp'
 
   export default {
     name: 'analysis',
     components: {
-      Sample1,
-      Sample2,
-      Sample3,
-      Sample4
+      LineTemp,
+      BarTemp,
+      PieTemp,
+      RaderTemp,
+      ScatterTemp,
+      DoughnutTemp,
+      BubbleTemp,
     },
     data() {
       return {

@@ -1,6 +1,6 @@
 <template>
-  <div id="sample1" :style="style">
-    <LineChart :chartData="datacollection" :width="width" :height="height" margin="0"/>
+  <div id="sample3" :style="style">
+    <PieChart :chartData="datacollection" :width="width" :height="height" margin="0"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -8,18 +8,18 @@
     margin: 0 auto;
     padding: 0;
   }
-  #sample1 {
+  #sample3 {
     margin: 0;
     display: inline-block;
   }
 </style>
 <script>
-import LineChart from '@/components/Chart/LineChart'
+import PieChart from '@/components/Chart/PieChart'
 
 export default {
-  name: 'Sample1',
+  name: 'Sample3',
   components: {
-    LineChart
+    PieChart
   },
   props: {
     width: {
@@ -51,15 +51,12 @@ export default {
   methods: {
     fillData() {
       this.datacollection = {
-        labels: ['2020.01','2020.02','2020.03','2020.04'],
+        labels: ['a','b','c','d'],
         datasets: [
           {
             label: '비속어 사용',
-            backgroundColor: '#f8ede388',
-            borderColor: '#798777',
-            pointBackgroundColor: '#798777',
-            borderWidht: 1,
-            pointBorderColor: '#bdd2b6',
+            backgroundColor: ['#be0000','#e48900','#f7ea00','#9ede73'],
+            borderWidth: 1,
             data: this.randomList(4)
           },
         ]
