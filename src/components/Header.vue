@@ -27,6 +27,7 @@
     $height: 80px;
     height: $height;
     width: 100%;
+    min-width: 730px;
     background-color: #FFF;
     border-bottom: 1px solid #ddd;
     padding: 0 10px;
