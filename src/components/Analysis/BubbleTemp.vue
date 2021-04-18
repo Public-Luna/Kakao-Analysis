@@ -57,6 +57,7 @@ export default {
             label: '홍길동',
             backgroundColor: '#be000044',
             borderColor: '#be0000aa',
+            borderWidth: 1,
             data: this.randomPos3(5)
           },
           {
