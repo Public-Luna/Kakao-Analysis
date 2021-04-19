@@ -2,6 +2,9 @@
 <template>
   <div id="analysis">
     <div>
+      <TestAnalysis class="item"/>
+    </div>
+    <div>
       <LineTemp class="item"/>
       <LineTemp class="item"/>
       <BarTemp class="item"/>
@@ -27,6 +30,7 @@
 </template>
 
 <script>
+  import TestAnalysis from '@/components/Analysis/TestAnalysis'
   import LineTemp from '@/components/Analysis/LineTemp'
   import BarTemp from '@/components/Analysis/BarTemp'
   import PieTemp from '@/components/Analysis/PieTemp'
@@ -38,6 +42,7 @@
   export default {
     name: 'analysis',
     components: {
+      TestAnalysis,
       LineTemp,
       BarTemp,
       PieTemp,
