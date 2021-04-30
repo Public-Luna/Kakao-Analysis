@@ -25,6 +25,16 @@ const ApiService = {
     return Vue.axios.post(`${resource}`, params);
   },
 
+  postFormdata(resource, file) {
+    let formdata = new FormData();
+    formdata.append('file', file)
+    return Vue.axios.post(`${resource}`, formdata, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+  },
+
   update(resource, slug, params) {
     return Vue.axios.put(`${resource}/${slug}`, params);
   },
@@ -37,7 +47,7 @@ const ApiService = {
     return Vue.axios.delete(resource).catch(error => {
       throw new Error(`[RWV] ApiService ${error}`);
     });
-  }
+  },
 };
 
 export default ApiService;

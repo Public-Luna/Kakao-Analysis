@@ -1,1 +1,2 @@
-export const FETCH_CHART = "setChart";
+export const FETCH_CHART = "fetchChart";
+export const UPLOAD_FILE = "uploadFile";

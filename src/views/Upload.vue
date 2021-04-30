@@ -11,8 +11,9 @@
           <p>.txt 혹은 .csv 확장자의 카카오톡 로그파일을 선택해주세요.</p>
           <b-form-file
             style="max-width: 500px;"
-            accept="text/plain, .csv"
+            accept=".txt, .csv"
             v-model="file"
+            name="file"
             :state="Boolean(file)"
             placeholder="파일을 선택하거나 이곳에 드래그 해주세요!"
             drop-placeholder="이곳에 드래그 해주세요!"
@@ -86,6 +87,9 @@
 </style>
 
 <script>
+  // import { mapState } from "vuex";
+  import { UPLOAD_FILE } from "@/store/actions.type";
+
   export default {
     components: {
       
@@ -107,8 +111,10 @@
     },
     methods: {
       onSubmit() {
-        console.log(1)
-      }
-    }
+        this.$store
+          .dispatch(UPLOAD_FILE, { file: this.file })
+          .then(() => this.$router.push({ path: "analysis" }));
+      },
+    },
   }
 </script>
