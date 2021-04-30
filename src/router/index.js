@@ -11,15 +11,20 @@ export default new Router({
       children: []
     },
     {
+      path: "/upload",
+      component: () => import("@/views/Upload"),
+      children: []
+    },
+    {
       path: "/analysis",
       component: () => import("@/views/Analysis"),
-      children: [
-        // {
-        //   path: "",
-        //   name: "home",
-        //   component: () => import("@/views/HomeGlobal")
-        // },
-      ]
+      // children: [
+      //   {
+      //     path: "",
+      //     name: "home",
+      //     component: () => import("@/views/HomeGlobal")
+      //   },
+      // ]
     },
     {
       path: "/project",

@@ -1,6 +1,7 @@
 
 <template>
   <div id="analysis">
+    <router-view></router-view>
     <div>
       <TestAnalysis class="item"/>
     </div>

@@ -7,7 +7,7 @@
           카카오톡 로그! 완벽하게 분석해드립니다! <br>
           업로드된 개인정보와 카카오톡 로그는 서버에 저장되지 않기 때문에 걱정하실 필요 없습니다! <br>
         </p>
-        <router-link to="analysis"><b-btn variant="outline-dark" size="lg">Get Started</b-btn></router-link>
+        <router-link to="upload"><b-btn variant="outline-dark" size="lg">Get Started</b-btn></router-link>
       </div>
     </b-container>
 
@@ -16,7 +16,7 @@
         <p class="title">Contribute to this project</p>
         <p class="subtitle">
           누구나 프로젝트에 참여하여 기여할 수 있습니다. <br>
-          <b-badge>웹개발</b-badge> <b-badge>웹디자인</b-badge> <b-badge>데이터분석</b-badge> <br>
+          <b-badge>웹개발</b-badge> <b-badge>시각화</b-badge> <b-badge>데이터분석</b-badge> <br>
         </p>
         <a href="mailto:luna20617@gmail.com"><b-btn variant="outline-dark" size="lg">Contact</b-btn></a>
       </div>
