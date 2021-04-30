@@ -35,15 +35,18 @@
             <b-form-invalid-feedback :state="state">동의를 하지 않으셨습니다.</b-form-invalid-feedback>
           </b-form-checkbox-group>
         </div>
-        <div class="block">
-          <strong>Getting Start</strong>
-          <p>분석을 시작합니다!</p>
-        </div>
+        <transition name="fade">
+          <div class="block start" v-if="load">
+            <strong>Getting Start</strong>
+            <p>버튼을 누르면 분석센터로 이동합니다!</p>
+            <b-button v-on:click="onSubmit" variant="outline-dark" size="lg">Let's Start!!</b-button>
+          </div>
+        </transition>
       </div>
     </b-container>
     <b-container>
       <div style="height: 1000px;">
-
+        
       </div>
     </b-container>
   </div>
@@ -53,7 +56,7 @@
   #home {
     width: 100%;
     .section {
-      padding-top: 12%;
+      padding-top: 5%; /* 줄임 */
 
       &.left>* {
         text-align: left;
@@ -73,6 +76,13 @@
       }
     }
   }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
 </style>
 
 <script>
@@ -90,6 +100,14 @@
     computed: {
       state() {
         return this.agree[0] == 'Y'
+      },
+      load() {
+        return this.agree[0] == 'Y' && this.file
+      }
+    },
+    methods: {
+      onSubmit() {
+        console.log(1)
       }
     }
   }
