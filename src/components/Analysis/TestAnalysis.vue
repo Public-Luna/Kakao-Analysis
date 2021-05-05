@@ -36,7 +36,9 @@ export default {
   data() {
     return {
       updated: 0,
-      config: {},
+      config: {
+        
+      },
       datacollection: {
         labels: [],
         datasets: [

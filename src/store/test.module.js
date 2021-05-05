@@ -1,4 +1,5 @@
 import ApiService from "@/common/api.service";
+import UserService from "@/common/user.service";
 import { FETCH_CHART } from "./actions.type";
 import {
   FETCH_START,
@@ -26,8 +27,15 @@ const getters = {
 const actions = {
   [FETCH_CHART]({ commit }, params) {
     commit(FETCH_START);
-    return ApiService.query('test', params.filters)
+    console.log(params)
+    console.log(UserService.getToken())
+    return ApiService.query('test', {
+      params: {
+        file_key: UserService.getToken()
+      }
+    })
       .then(({ data }) => {
+        console.log(data)
         commit(FETCH_END, data);
       })
       .catch(error => {
